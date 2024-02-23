@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="OTPgeneration.css">
+<title>Password Change with OTP</title>
+<style>
+    /* Add your CSS styles here */
+    body {
+        background-image: url('otpback.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+</style>
+</head>
+<body>
+    <div id="passwordChangeForm">
+        <h2>Password Change</h2>
+        <input type="text" id="userId" placeholder="User name"><br><br>
+        <button onclick="sendOTP()">Send OTP</button><br><br>
+        <input type="text" id="otp" placeholder="Enter OTP"><br><br>
+        <button onclick="verifyOTP()">Verify OTP</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function sendOTP() {
+            var userId = document.getElementById("userId").value;
+            // Here, you would typically make an AJAX request to your backend to check if the user is registered
+            // For simplicity, let's assume the user is registered
+            if (userId) {
+                // Generate and send OTP (dummy implementation)
+                var otp = Math.floor(100000 + Math.random() * 900000); // Generate OTP
+                alert("OTP sent to your registered email or phone: " + otp); // Dummy OTP sending
+                localStorage.setItem("otp_" + userId, otp); // Store OTP in localStorage
+            } else {
+                alert("Please provide your User ID.");
+            }
+        }
+
+        function verifyOTP() {
+            var userId = document.getElementById("userId").value;
+            var enteredOTP = document.getElementById("otp").value;
+            if (userId && enteredOTP) {
+                var storedOTP = localStorage.getItem("otp_" + userId);
+                if (enteredOTP === storedOTP) {
+                    // OTP verification successful
+                    alert("OTP verified successfully. Redirecting to product page.");
+                    window.location.href = "product.html"; // Redirect to the product page
+                    localStorage.removeItem("otp_" + userId); // Remove OTP from localStorage
+                } else {
+                    alert("Invalid OTP. Please try again.");
+                }
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</body>
+</html>

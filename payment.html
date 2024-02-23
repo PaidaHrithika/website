@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Payment Option</h1>
+        <div class="options">
+            <input type="radio" id="upi" name="payment" value="upi">
+            <label for="upi">UPI</label><br>
+            <input type="radio" id="creditCard" name="payment" value="creditCard">
+            <label for="creditCard">Credit Card</label><br>
+            <input type="radio" id="cashOnDelivery" name="payment" value="cashOnDelivery">
+            <label for="cashOnDelivery">Cash on Delivery</label><br><br>
+            <button onclick="confirmPayment()">Confirm Payment</button>
+        </div>
+        <div id="message"></div>
+    </div>
+ 
+    <script src="payment.js"></script>
+</body>
+</html>

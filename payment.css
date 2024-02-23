@@ -1,0 +1,15 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+ 
+.options {
+    margin-bottom: 20px;
+}
+ 
+#message {
+    font-weight: bold;
+    margin-top: 20px;
+}

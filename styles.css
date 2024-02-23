@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+ 
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+}
+ 
+h1 {
+    color: #eae6e6;
+}
+ 
+.options {
+    margin-top: 50px;
+}
+ 
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ 
+button:hover {
+    background-color: #0056b3;
+}
